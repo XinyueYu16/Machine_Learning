@@ -1,2 +1,5 @@
-# Machine_Learning_Projects
-A record of all the machine learning projects I have done, including courseworks, practicum and competitions.
+# Machine_Learning
+A record of machine learning learning and machine learning practicing. 
+
+## Table of Contents
+
