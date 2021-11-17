@@ -15,7 +15,10 @@
 - WCSS（Sum of Squares of Within-Clusters）
 
 - 轮廓系数：b为样本点距离最近簇所有点的距离；a为样本点与同簇所有点的距离；s的取值范围为(-1,1)，接近1说明该点离最近簇也很遥远，接近0说明该点离最近簇接近，为负说明该点大概分错了。![image-20211117000836766](https://github.com/XinyueYu16/Machine_Learning/blob/master/assets/Kmeans1.png)
-  $s_i=(b_i-a_i)/max(b_i,a_i)$
+  
+```math
+s_i = (b_i - a_i)/max(b_i,a_i)
+```
 
 **风险**：开始点随机，结果随机
 
