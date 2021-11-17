@@ -14,7 +14,7 @@
 
 - WCSS（Sum of Squares of Within-Clusters）
 
-- 轮廓系数：b为样本点距离最近簇所有点的距离；a为样本点与同簇所有点的距离；s的取值范围为(-1,1)，接近1说明该点离最近簇也很遥远，接近0说明该点离最近簇接近，为负说明该点大概分错了。![image-20211117000836766](C:\Users\Willa\AppData\Roaming\Typora\typora-user-images\image-20211117000836766.png)
+- 轮廓系数：b为样本点距离最近簇所有点的距离；a为样本点与同簇所有点的距离；s的取值范围为(-1,1)，接近1说明该点离最近簇也很遥远，接近0说明该点离最近簇接近，为负说明该点大概分错了。![image-20211117000836766](C:\Users\Willa\Spinach\Take Home Challenge\Machine_Learning\assets\Kmeans1.png)
   $$
   s_i = (b_i - a_i)/max(b_i,a_i)
   $$
@@ -44,7 +44,7 @@
 - 细节：init默认Kmeans++; 可以输入observation_weight; **如果max_iter过少导致模型在fully_converging前停止, .labels\_和.cluster\_centers\_会对不上**
 - KMeans++: 快速、准确
 
-![image-20211117001451772](C:\Users\Willa\AppData\Roaming\Typora\typora-user-images\image-20211117001451772.png)
+![image-20211117001451772](C:\Users\Willa\Spinach\Take Home Challenge\Machine_Learning\assets\Kmeans2.png)
 
 **参考**：
 
