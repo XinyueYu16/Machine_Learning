@@ -26,7 +26,7 @@
 
     - 分类树：XGBClassificator，如果样本不均衡，需要设定**scale_pos_weight**(0:1的倍数)
 
-  - 两种模式参数及回归结果不一样，详见案例 [classify unbalanced data](#classify unbalanced data)
+  - 两种模式参数及回归结果不一样，详见案例 [classify unbalanced data](#classify-unbalanced-data)
 
 **案例：**
 
