@@ -1,5 +1,7 @@
 # KMeans
 
+**“比喻”**：**村民-布道模型**：设置布道点，使每个村民到其布道点的距离之和最小
+
 **标签**：非监督、聚类、快速、随机（local minima）简单好用（客户好理解）、sklearn
 
 **应用**：
@@ -10,18 +12,25 @@
 
    ​	*是否有用？待确认……*
 
+**优势：**易理解，快速简单
+
+**劣势**：
+
+- 人为选择K
+- 开始点随机，结果随机 —— *max_iter: 多iter，选择最优*
+- 基于欧氏距离，异常点影响较大
+- 只适用于**单一分类**
+
+
+
 **评价指标**：
 
 - WCSS（Sum of Squares of Within-Clusters）
 
-- 轮廓系数：b为样本点距离最近簇所有点的距离；a为样本点与同簇所有点的距离；s的取值范围为(-1,1)，接近1说明该点离最近簇也很遥远，接近0说明该点离最近簇接近，为负说明该点大概分错了。![image-20211117000836766](https://github.com/XinyueYu16/Machine_Learning/blob/master/assets/Kmeans1.png)
+- 轮廓系数：b为样本点距离最近簇所有点的平均距离；a为样本点与同簇所有点的平均距离；s的取值范围为(-1,1)，接近1说明该点离最近簇也很遥远，接近0说明该点离最近簇接近，为负说明该点大概分错了。![image-20211117000836766](https://github.com/XinyueYu16/Machine_Learning/blob/master/assets/Kmeans1.png)
   $$
   s_i = (b_i - a_i)/max(b_i,a_i)
   $$
-
-**风险**：开始点随机，结果随机
-
-- max_iter: 多iter，选择最优
 
 **数据处理**：如果想每个feature的权重一致，先标准化。
 
@@ -51,9 +60,12 @@
 - [Visual explanation of KMeans Process](https://www.kaggle.com/shrutimechlearn/step-by-step-kmeans-explained-in-detail)
 - [Kmeans++](https://scikit-learn.org/stable/auto_examples/text/plot_document_clustering.html#sphx-glr-auto-examples-text-plot-document-clustering-py)
 - [sklearn.cluster.KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
+- [甚至有伪代码实现过程的超详细kmeans解析](https://zhuanlan.zhihu.com/p/78798251)
 
 
 
 Willa
 
-2021.11.16
+2021.11.16 created
+
+2021.11.24 updated
