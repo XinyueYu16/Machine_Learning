@@ -8,7 +8,7 @@
 
 <br>
 
-[TOC]
+
 
 ## **Confusion Matrix**
 
