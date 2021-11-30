@@ -8,7 +8,7 @@
 
 <br>
 
-
+[TOC]
 
 ## **Confusion Matrix**
 
@@ -23,7 +23,9 @@ FP：真实为负，预测为正
 FN：真实为正，预测为负
 
 
+
 <br>
+
 ## 模型结果评价（在决定threshold后）
 
 ### **Precision**: TP/(TP + FP)，预测正结果中**precision%**为正确的
@@ -45,6 +47,8 @@ FN：真实为正，预测为负
 
 <br>
 
+
+
 ### **Accuracy**: 总体上预测准确的数量：(TP + TF)/N(samples)
 
 - 当样本extremely unbalanced时候，Accuracy == bullshit，因为在那种情况下全部预测为0或为1，Precision或Recall就已经很高，但是无法有效预测小样本类别
@@ -60,7 +64,9 @@ FN：真实为正，预测为负
   - 当β > 1时，更重视Recall，更想降低 False Negative
 
 
+
 <br>
+
 ## 模型本身评价（考虑多种threshold的情况）
 
 可以通过下列指标对不同模型进行评价（如不同特征的Logistic Regression, Logistic和Tree等），主要考察的是在不同threshold下模型的整体表现（roustness），但在决定模型后依然需要谨慎处理threshold。
