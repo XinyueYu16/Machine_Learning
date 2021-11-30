@@ -10,7 +10,7 @@
 
 
 
-### **Confusion Matrix**
+## **Confusion Matrix**
 
 模型结果（假设binary）有四种情况，TP/TN/FP/FN
 
@@ -23,17 +23,15 @@ FP：真实为负，预测为正
 FN：真实为正，预测为负
 
 
-
-### 模型结果评价（在决定threshold后）
-
 <br>
+## 模型结果评价（在决定threshold后）
 
-#### **Precision**: TP/(TP + FP)，预测正结果中**precision%**为正确的
+### **Precision**: TP/(TP + FP)，预测正结果中**precision%**为正确的
 
 - 'how relevant is your answer?'
 - 当更在意Type I Error (FP), 希望提高在有限次数里拒绝原假设（采取行动）的效率，因为行动有代价，比如零件质量检测。
 
-#### **Recall**: TP/(TP + FN)，真实正结果中**recall%**为被我们预测出来的。
+### **Recall**: TP/(TP + FN)，真实正结果中**recall%**为被我们预测出来的。
 
 - 'how extensive is your answer?'
 - 当更在意Type II Error (FN), 希望不要错过采取行动的机会，因为不采取行动的代价更大，比如核酸检验。
@@ -47,7 +45,7 @@ FN：真实为正，预测为负
 
 <br>
 
-#### **Accuracy**: 总体上预测准确的数量：(TP + TF)/N(samples)
+### **Accuracy**: 总体上预测准确的数量：(TP + TF)/N(samples)
 
 - 当样本extremely unbalanced时候，Accuracy == bullshit，因为在那种情况下全部预测为0或为1，Precision或Recall就已经很高，但是无法有效预测小样本类别
 
@@ -62,12 +60,12 @@ FN：真实为正，预测为负
   - 当β > 1时，更重视Recall，更想降低 False Negative
 
 
-
-### 模型本身评价（考虑多种threshold的情况）
+<br>
+## 模型本身评价（考虑多种threshold的情况）
 
 可以通过下列指标对不同模型进行评价（如不同特征的Logistic Regression, Logistic和Tree等），主要考察的是在不同threshold下模型的整体表现（roustness），但在决定模型后依然需要谨慎处理threshold。
 
-#### ROC: True Positive Rate vs False Positive Rate
+### ROC: True Positive Rate vs False Positive Rate
 
 - 学名：Receiver Operating Characteristics
 
@@ -83,7 +81,7 @@ FN：真实为正，预测为负
 
   ![ROC](../assets/ROC_1.png)
 
-#### ROC-AUC: Area Under Curve
+### ROC-AUC: Area Under Curve
 
 - **最佳表现：AUC = 1**
 
@@ -109,7 +107,7 @@ FN：真实为正，预测为负
 
 
 
-#### PR-AUC: Perfect for imbalanced data
+### PR-AUC: Perfect for imbalanced data
 
 - **PR仅关注minority class(Positive)**，而ROC关注了Pos和Neg（Minority & Majority）
 
@@ -121,7 +119,7 @@ FN：真实为正，预测为负
 
 - [在极端imbalance情况下对比PR与ROC](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-imbalanced-classification/): 参考最后一部分
 
-
+<br>
 
 Willa	2021.11.23
 
