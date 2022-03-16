@@ -15,6 +15,8 @@
 
 1. Sklearn: feature_importance：基于sklearn模型（主要为树模型）的分叉规则，特征重要性与该特征在节点分支判断上出现的次数呈正比
 2. Permutation importance：将一个特征打乱后，给模型带来的影响
+   - sklearn中的permutation_importance既可以计算train，又可以计算test中的feature importance
+   - 相比于自带的feature_importance而言，permutation_importance对于分类变量的打分会更友好
 3. Drop importance：将一个特征去掉后，给模型带来的影响
 
 - *一个猜想：有没有可能出现2/3的影响不大而1的影响大，如果是，是不是可以用来说明有共线性？*
