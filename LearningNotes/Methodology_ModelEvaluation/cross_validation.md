@@ -12,7 +12,7 @@
 
 - **常用**：KFold, RepeatedKFold, ShuffleSplit
 - **针对目标值为分类数据**：StratifiedKFold, StratifiedShuffleSplit
-- **针对特征值为分类数据**：GroupKFold...（用来验证对分类的敏感性，在同一分类内的数据永远不会同时出现在一份train&valid set里）
+- **针对Grouped数据**：GroupKFold...（用来验证对Group的敏感性，在同一Group内的数据永远不会同时出现在一份train&valid set里，我之前把‘Group’理解成了X特征值里的分类，这是不正确的，一种正确的例子是：假设每一份样本都是由xx病人提供的，而一个病人可能提供>1个样本，那么这些来自于同一个病人的样本就是属于一个Group）
 
 ### Time Series 数据集分割方法
 
@@ -25,7 +25,7 @@
 
 ### 对于需要在CV中调整超参的模型
 
-- Nested: 在CV中套CV![超参](https://cdn-images-1.medium.com/max/800/1*N8PoOZP6qH6VXsX4LnS6Fg.png)
+- Nested: 在CV中套CV![超参](https://github.com/XinyueYu16/Machine_Learning/blob/master/Assets/nestedCV.png)
 
 # 操作
 
@@ -44,6 +44,14 @@
   # define the evaluation procedure
   cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
   ```
+
+### 对于模型在CV中的得分
+- sklearn, cross_val_score：返回score，可输入特定cv
+- sklearn, cross_validate: 根据指定的score string list或score dict对模型进行评分
+- sklearn, *cross_val_predict*: 可以返回数据中当该数据被作为test data时的预测值，由此计算出的得分可能与cross_val_score不同，因此不能用于计算得分
+  - 原因：cross_val_score是对CV中k个模型得分的平均，而cross_val_predict的结果由于无法得知哪个预测值属于哪个模型，只能计算在整体数据上的得分
+  - 应用场景：绘图或者作为ensemble模型输入的结果
+  ![cross_val_predict plot](https://github.com/XinyueYu16/Machine_Learning/blob/master/Assets/corss_val_predict.png)
 
 ### CV & Nested CV
 

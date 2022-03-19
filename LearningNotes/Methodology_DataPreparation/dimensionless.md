@@ -28,7 +28,7 @@
     - 一种方法为：当Test Data超出范围时，对于超出范围的值赋值为去量纲后的最大最小值
 
 ![归一化与标准化的对比](https://github.com/XinyueYu16/Machine_Learning/blob/master/Assets/归一化和标准化的对比.png)
-![标准化的迭代收敛效果](https://github.com/XinyueYu16/Machine_Learning/blob/master/Assets/标准化的迭代收敛效果)
+![标准化的迭代收敛效果](https://github.com/XinyueYu16/Machine_Learning/blob/master/Assets/标准化的迭代收敛效果.png)
 
 **_参考_**
 
